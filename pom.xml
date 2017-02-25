@@ -54,21 +54,23 @@
             <plugin>
                 <groupId>com.github.github</groupId>
                 <artifactId>site-maven-plugin</artifactId>
-                <version>0.11</version>
+                <version>0.12</version>
                 <configuration>
+                    <!--<dryRun>true</dryRun>-->
+                    <!--<force>true</force>-->
                     <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
                     <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
                     <merge>true</merge>
                     <path>${project.version}</path>
                     <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-                    <!--<branch>refs/heads/mvn-repo</branch>-->
+                    <branch>refs/heads/mvn-repo</branch>
                     <!--<includes><include>**/*</include></includes>-->
                     <repositoryName>demo</repositoryName>
                     <repositoryOwner>enschede</repositoryOwner>
                     <server>github</server>
                 </configuration>
                 <executions>
-                    <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+                     <!--run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase-->
                     <execution>
                         <goals>
                             <goal>site</goal>
@@ -84,7 +86,7 @@
 	<scm>
 		<url>https://github.com/enschede/demo.git</url>
 		<connection>scm:git:https://github.com/enschede/demo.git</connection>
-		<developerConnection>scm:git:git@github.com:enschede/demo.git</developerConnection>
+		<developerConnection>scm:git:ssh://git@github.com/enschede/demo.git</developerConnection>
 		<tag>release-1.0</tag>
 	</scm>
 
