@@ -56,21 +56,17 @@
                 <artifactId>site-maven-plugin</artifactId>
                 <version>0.12</version>
                 <configuration>
-                    <!--<dryRun>true</dryRun>-->
-                    <!--<force>true</force>-->
-                    <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
-                    <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-                    <merge>true</merge>
+                    <message>Maven artifacts for ${project.version}</message>
+                    <noJekyll>true</noJekyll>
                     <path>${project.version}</path>
                     <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
                     <branch>refs/heads/mvn-repo</branch>
-                    <!--<includes><include>**/*</include></includes>-->
+                    <includes><include>**/*</include></includes>
                     <repositoryName>demo</repositoryName>
                     <repositoryOwner>enschede</repositoryOwner>
                     <server>github</server>
                 </configuration>
                 <executions>
-                     <!--run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase-->
                     <execution>
                         <goals>
                             <goal>site</goal>
@@ -98,4 +94,14 @@
 		</repository>
 	</distributionManagement>
 
+    <repositories>
+        <repository>
+            <id>demo-mvn-repo</id>
+            <url>https://raw.github.com/enschede/demo/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
