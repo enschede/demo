@@ -58,11 +58,14 @@
                 <configuration>
                     <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
                     <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-                    <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
-                    <branch>refs/heads/master</branch>                       <!-- remote branch name -->
-                    <includes><include>**/*</include></includes>
-                    <repositoryName>demo</repositoryName>      <!-- github repo name -->
-                    <repositoryOwner>enschede</repositoryOwner>    <!-- github username  -->
+                    <merge>true</merge>
+                    <path>${project.version}</path>
+                    <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+                    <!--<branch>refs/heads/mvn-repo</branch>-->
+                    <!--<includes><include>**/*</include></includes>-->
+                    <repositoryName>demo</repositoryName>
+                    <repositoryOwner>enschede</repositoryOwner>
+                    <server>github</server>
                 </configuration>
                 <executions>
                     <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
@@ -81,7 +84,7 @@
 	<scm>
 		<url>https://github.com/enschede/demo.git</url>
 		<connection>scm:git:https://github.com/enschede/demo.git</connection>
-		<developerConnection>scm:git:https://github.com/enschede/demo.git</developerConnection>
+		<developerConnection>scm:git:git@github.com:enschede/demo.git</developerConnection>
 		<tag>release-1.0</tag>
 	</scm>
 
