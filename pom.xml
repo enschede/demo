@@ -82,7 +82,7 @@
 	<scm>
 		<url>https://github.com/enschede/demo.git</url>
 		<connection>scm:git:https://github.com/enschede/demo.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com/enschede/demo.git</developerConnection>
+		<developerConnection>scm:git:https://github.com/enschede/demo.git</developerConnection>
 		<tag>release-1.0</tag>
 	</scm>
 
